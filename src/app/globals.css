@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f4ee;
+  --foreground: #12263a;
+  --navy: #0b2545;
+  --navy-deep: #071a33;
+  --gold: #c9a24b;
+  --gold-light: #e4c77c;
+  --teal: #1b6b7a;
+  --cream: #faf7f0;
+  --card-border: #e4ddca;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-teal: var(--teal);
+  --color-cream: var(--cream);
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-heading);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, .font-heading {
+  font-family: var(--font-heading), Georgia, serif;
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.gold-btn {
+  background: linear-gradient(180deg, var(--gold-light), var(--gold));
+  color: var(--navy-deep);
+}
+
+.card-frame {
+  background: var(--cream);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 30px -12px rgba(11, 37, 69, 0.25);
+}
+
+@keyframes wave {
+  0% { background-position-x: 0; }
+  100% { background-position-x: 1000px; }
+}
+
+.wave-bg {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 60'%3E%3Cpath d='M0 30 Q 25 10 50 30 T 100 30 T 150 30 T 200 30 T 250 30 T 300 30 T 350 30 T 400 30 T 450 30 T 500 30 T 550 30 T 600 30 T 650 30 T 700 30 T 750 30 T 800 30 T 850 30 T 900 30 T 950 30 T 1000 30' fill='none' stroke='%23c9a24b' stroke-opacity='0.35' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  animation: wave 18s linear infinite;
+}
