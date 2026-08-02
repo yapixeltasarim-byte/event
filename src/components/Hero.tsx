@@ -1,7 +1,7 @@
 import { eventConfig } from "@/lib/event-config";
 import { formatDateRangeTR } from "@/lib/format";
 import Countdown from "./Countdown";
-import PromoVideo from "./PromoVideo";
+import HeroVideo from "./HeroVideo";
 
 export default function Hero() {
   return (
@@ -9,7 +9,7 @@ export default function Hero() {
       id="anasayfa"
       className="relative overflow-hidden bg-navy text-cream min-h-[560px] sm:min-h-[680px] flex items-center"
     >
-      <PromoVideo />
+      <HeroVideo />
       <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/85 via-navy-deep/55 to-navy-deep/85" />
 
       <div className="relative z-10 w-full max-w-3xl mx-auto px-6 py-16 sm:py-24 flex flex-col items-center text-center gap-10">

@@ -6,7 +6,6 @@ import LocationSection from "@/components/LocationSection";
 import WeatherSection from "@/components/WeatherSection";
 import MemorySection from "@/components/MemorySection";
 import RsvpSection from "@/components/RsvpSection";
-import MusicPlayer from "@/components/MusicPlayer";
 import { eventConfig } from "@/lib/event-config";
 
 export default function Home() {
@@ -28,7 +27,6 @@ export default function Home() {
           İletişim: {eventConfig.contact.phone} · {eventConfig.contact.email}
         </p>
       </footer>
-      <MusicPlayer />
     </div>
   );
 }

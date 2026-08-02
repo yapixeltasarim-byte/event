@@ -43,6 +43,9 @@ yarn-error.log*
 # local dev tools (ffmpeg, etc.)
 /.tools/
 
+# deployment SSH keys — never commit
+/.deploy-ssh/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
