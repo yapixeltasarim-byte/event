@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { DEMO_MODE } from "@/lib/config";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -14,6 +15,15 @@ export default function RsvpForm() {
     setErrorMsg("");
 
     const form = e.currentTarget;
+
+    if (DEMO_MODE) {
+      setTimeout(() => {
+        setStatus("success");
+        form.reset();
+      }, 500);
+      return;
+    }
+
     const data = new FormData(form);
     const payload = {
       name: data.get("name"),

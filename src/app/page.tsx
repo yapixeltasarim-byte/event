@@ -1,4 +1,3 @@
-import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Itinerary from "@/components/Itinerary";
 import CalendarSection from "@/components/CalendarSection";
@@ -11,7 +10,6 @@ import { eventConfig } from "@/lib/event-config";
 export default function Home() {
   return (
     <div className="flex flex-col flex-1">
-      <Nav />
       <main className="flex flex-col flex-1">
         <Hero />
         <Itinerary />

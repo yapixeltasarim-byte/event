@@ -7,10 +7,10 @@ export default function Hero() {
   return (
     <section
       id="anasayfa"
-      className="relative overflow-hidden bg-navy text-cream min-h-[560px] sm:min-h-[680px] flex items-center"
+      className="relative overflow-hidden bg-navy text-cream min-h-[95vh] flex items-center"
     >
       <HeroVideo />
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/85 via-navy-deep/55 to-navy-deep/85" />
+      <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/60 via-navy-deep/25 to-navy-deep/70" />
 
       <div className="relative z-10 w-full max-w-3xl mx-auto px-6 py-16 sm:py-24 flex flex-col items-center text-center gap-10">
         <div>

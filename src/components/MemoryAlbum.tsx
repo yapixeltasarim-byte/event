@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { DEMO_MODE } from "@/lib/config";
 
 type Status = "idle" | "uploading" | "success" | "error";
 
@@ -20,6 +21,15 @@ export default function MemoryAlbum() {
     }
 
     setStatus("uploading");
+
+    if (DEMO_MODE) {
+      setTimeout(() => {
+        form.reset();
+        setStatus("success");
+      }, 500);
+      return;
+    }
+
     try {
       const res = await fetch("/api/memories", { method: "POST", body: data });
       if (!res.ok) {
