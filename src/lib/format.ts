@@ -10,6 +10,13 @@ export function formatDateTR(iso: string, opts?: Intl.DateTimeFormatOptions) {
 export function formatDateRangeTR(startIso: string, endIso: string) {
   const start = new Date(startIso);
   const end = new Date(endIso);
+  const sameDay =
+    start.getFullYear() === end.getFullYear() &&
+    start.getMonth() === end.getMonth() &&
+    start.getDate() === end.getDate();
+  if (sameDay) {
+    return formatDateTR(startIso);
+  }
   const sameMonth = start.getMonth() === end.getMonth() && start.getFullYear() === end.getFullYear();
   const startStr = start.toLocaleDateString("tr-TR", {
     day: "numeric",

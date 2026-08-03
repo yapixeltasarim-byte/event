@@ -1,29 +1,29 @@
-import { eventConfig } from "@/lib/event-config";
+import type { SiteConfig } from "@/lib/types";
 
-export default function LocationSection() {
-  const { departurePort } = eventConfig;
-  const mapQuery = encodeURIComponent(departurePort.address);
+export default function LocationSection({ config }: { config: SiteConfig }) {
+  const { venue } = config;
+  const mapQuery = encodeURIComponent(venue.address);
   const embedSrc = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-    `${departurePort.lat},${departurePort.lon}`
+    `${venue.lat},${venue.lon}`
   )}`;
 
   return (
     <section id="konum" className="bg-navy text-cream py-16 sm:py-24 px-6">
       <div className="max-w-3xl mx-auto text-center">
         <p className="uppercase tracking-[0.3em] text-xs text-gold-light mb-3">
-          Kalkış Noktası
+          {config.venueLabel}
         </p>
         <h2 className="font-heading text-3xl sm:text-4xl mb-2">
-          {departurePort.name}
+          {venue.name}
         </h2>
         <p className="text-cream/70 text-sm sm:text-base mb-6">
-          {departurePort.address}
+          {venue.address}
         </p>
 
         <div className="card-frame rounded-xl overflow-hidden mb-6">
           <iframe
-            title="Kalkış limanı haritası"
+            title="Konum haritası"
             src={embedSrc}
             width="100%"
             height="320"

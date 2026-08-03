@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 
-export default function HeroVideo() {
+export default function HeroVideo({ src }: { src: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
   const [errored, setErrored] = useState(false);
@@ -24,7 +24,7 @@ export default function HeroVideo() {
     <>
       <video
         ref={videoRef}
-        src="/videos/tanitim.mp4"
+        src={src}
         autoPlay
         muted
         loop

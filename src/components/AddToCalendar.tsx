@@ -1,20 +1,20 @@
 "use client";
 
-import { eventConfig } from "@/lib/event-config";
+import type { SiteConfig } from "@/lib/types";
 import { buildGoogleCalendarUrl, buildICS, downloadICS } from "@/lib/ics";
 
-export default function AddToCalendar() {
+export default function AddToCalendar({ config }: { config: SiteConfig }) {
   const eventDetails = {
-    title: eventConfig.eventName,
-    description: `${eventConfig.eventSubtitle}\n${eventConfig.shipName} ile hareket: ${eventConfig.departurePort.name}`,
-    location: eventConfig.departurePort.address,
-    start: eventConfig.startDate,
-    end: eventConfig.endDate,
+    title: config.eventName,
+    description: `${config.eventSubtitle}\n${config.venue.name}`,
+    location: config.venue.address,
+    start: config.startDate,
+    end: config.endDate,
   };
 
   const handleDownloadICS = () => {
     const ics = buildICS(eventDetails);
-    downloadICS("ege-cruise-turu.ics", ics);
+    downloadICS(`${config.eventName.toLowerCase().replace(/[^a-z0-9]+/g, "-")}.ics`, ics);
   };
 
   const googleUrl = buildGoogleCalendarUrl(eventDetails);

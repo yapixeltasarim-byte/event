@@ -1,6 +1,7 @@
+import type { SiteConfig } from "@/lib/types";
 import AddToCalendar from "./AddToCalendar";
 
-export default function CalendarSection() {
+export default function CalendarSection({ config }: { config: SiteConfig }) {
   return (
     <section className="bg-cream py-12 sm:py-16 px-6 border-y border-gold/20">
       <div className="max-w-3xl mx-auto text-center">
@@ -8,9 +9,9 @@ export default function CalendarSection() {
           Tarihi Takviminize Ekleyin
         </h2>
         <p className="text-foreground/60 text-sm mb-6">
-          Kalkış tarihini unutmamak için takviminize ekleyin.
+          Tarihi unutmamak için takviminize ekleyin.
         </p>
-        <AddToCalendar />
+        <AddToCalendar config={config} />
       </div>
     </section>
   );
